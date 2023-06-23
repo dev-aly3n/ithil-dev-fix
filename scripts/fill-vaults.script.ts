@@ -69,10 +69,10 @@ const main = async () => {
       const wbtcAmount = BigNumber.from(4n * wbtcOneUnit)
 
       await Promise.all([
-        usdc.approve(usdcVault.address, usdcAmount),
-        usdt.approve(usdtVault.address, usdtAmount),
-        weth.approve(wethVault.address, 9n * wethOneUnit),
-        wbtc.approve(btcVault.address, 4n * wbtcOneUnit),
+        usdc.approve(usdcVault.address, usdcAmount, { gasLimit: 2000000 }),
+        usdt.approve(usdtVault.address, usdtAmount, { gasLimit: 2000000 }),
+        weth.approve(wethVault.address, 9n * wethOneUnit, { gasLimit: 2000000 }),
+        wbtc.approve(btcVault.address, 4n * wbtcOneUnit, { gasLimit: 2000000 }),
       ])
 
       await Promise.all([
